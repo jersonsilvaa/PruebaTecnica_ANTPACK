@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Piedra Papel o Tijeras</title>
+</head>
+<body>
+  <script>
+function Piedra_Papel_Tijeras() {
+	player1 = 0;
+	player2 = 0;
+	while (player1 == player2) {
+        const nombre_player1 = prompt(`Ingresar nombre del primer jugador`);
+        const player1 = prompt(`${nombre_player1} Seleccione una de las 3 opciones \n1. Piedra \n2. Papel \n3. Tijeras`);
+
+		if (player1 > 0 && player1 < 4) {
+
+            const nombre_player2 = prompt(`Ingresar nombre del segundo jugador`);
+            const player2 = prompt(`${nombre_player2} Seleccione una de las 3 opciones \n1. Piedra \n2. Papel \n3. Tijeras`);
+
+			if (player2 > 0 && player2 < 4) {
+				if (player1 == 1 && player2 == 3) {
+                    alert(`El ganador es: ${nombre_player1} \nPiedra le gana a Tijeras`);
+				} else {
+					if (player1 == 2 && player2 == 1) {
+						alert(`El ganador es: ${nombre_player1} \nPapel le gana a Piedra`);
+					} else {
+						if (player1 == 3 && player2 == 2) {
+							alert(`El ganador es: ${nombre_player1} \nTijeras le gana a Papel`);
+						}
+					}
+				}
+				if (player2 == 1 && player1 == 3) {
+					alert(`El ganador es: ${nombre_player2} \nPiedra le gana a Tijeras`);
+				} else {
+					if (player2 == 2 && player1 == 1) {
+						alert(`El ganador es: ${nombre_player2} \nPapel le gana a Piedra`);
+					} else {
+						if (player2 == 3 && player1 == 2) {
+							alert(`El ganador es: ${nombre_player2} \nTijeras le gana a Papel`);
+						}
+					}
+				}
+
+				if (player1 == player2) {
+                    alert(`Ambos jugadores empataron`);
+				}
+			} else {
+                alert(`Ingrese la opción correcta`);
+			}
+		} else {
+            alert(`Ingrese una opción correcta`);
+		}
+
+		var volver = prompt(`¿Desea jugar otra vez, si o no?`)
+
+            if (volver == "si" || volver == "Si" || volver == "SI" || volver == "sI") {
+                    return Piedra_Papel_Tijeras();
+            } else if (volver == "no" || volver == "No" || volver == "NO" || volver == "nO") {
+                    break
+            }
+	}
+}
+
+
+Piedra_Papel_Tijeras();
+
+  </script>
+</body>
+</html>
